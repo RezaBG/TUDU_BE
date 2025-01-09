@@ -9,7 +9,7 @@ class TaskBase(BaseModel):
     status: Optional[TaskStatus] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
         use_enum_values = True
 
 class TaskCreate(TaskBase):

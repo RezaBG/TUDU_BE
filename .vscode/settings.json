@@ -1,0 +1,13 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "apiKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTczNjQ1NzI4N30.lGkwJhdvAK0zhE-JrESdZPsHUM4ffz25mxCmPbbaMd4"
+    },
+    "Local Env": {
+      "baseUrl": "http://localhost:8000"
+    },
+    "Dev Env": {
+      "baseUrl": "http://dev.example.com"
+    }
+  }
+}
