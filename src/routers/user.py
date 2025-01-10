@@ -53,7 +53,13 @@ async def get_all_users(
     """
     logger.info(f"Fetching users requested by: {current_user.username}")
 
+    # Fetch users
     users = db.query(User).all()
+    logger.debug(f"Users fetched: {[user.username for user in users]}")
+
+    # Debug user tasks
+    for user in users:
+        logger.debug(f"User {user.username} has tasks: {user.todos}")
 
     if not users:
         logger.info("No users found")

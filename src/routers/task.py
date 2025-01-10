@@ -66,7 +66,8 @@ def create_task(
 
     try:
         # Make sure to use TaskStatus enum properly (ensure it's using the correct value)
-        task_status = TaskStatus[task.status.lower()]
+        # task_status = TaskStatus[task.status.lower()]
+        task_status = TaskStatus(task_status)
         logger.debug(f"Task status after conversion: {task_status}")
     except KeyError:
         logger.warning(f"Invalid task status: {task.status}")

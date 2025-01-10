@@ -66,10 +66,10 @@ Authorization: Bearer {{apiKey}}
 Content-Type: application/json
 
 {
-  "title": "New Task",
-  "description": "A sample task",
-  "status": "pending", 
-  "owner_id": 1
+  "title": "Just for test",
+  "description": "Ask about the project",
+  "status": "in-progress", 
+  "owner_id": 5
 }
 
 ###
@@ -80,30 +80,30 @@ Content-Type: application/json
 
 ###
 // 3. Retrieve a task by ID
-GET http://localhost:8000/tasks/1 HTTP
+GET http://localhost:8000/tasks/2 HTTP/1.1
 Authorization: Bearer {{apiKey}}
 Content-Type: application/json
 
 ###
 // 4. Update a task by ID
-PUT http://localhost:8000/tasks/1 HTTP
+PUT http://localhost:8000/tasks/1 HTTP/1.1
 Authorization: Bearer {{apiKey}}
 Content-Type: application/json
 
 {
   "title": "Updated Task",
   "description": "An updated task",
-  "status": "completed"
+  "status": "in-progress"
 }
 
 ###
 // 5. Delete a task by ID
-DELETE http://localhost:8000/tasks/1 HTTP
+DELETE http://localhost:8000/tasks/3 HTTP/1.1
 Authorization: Bearer {{apiKey}}
 Content-Type: application/json
 
 ###
 // 6. Retrieve all tasks filtered by status
-GET http://localhost:8000/tasks?status=pending HTTP
+GET http://localhost:8000/tasks?status=pending HTTP/1.1
 Authorization: Bearer {{apiKey}}
 Content-Type: application/json
