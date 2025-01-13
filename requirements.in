@@ -13,3 +13,4 @@ gunicorn
 python-multipart
 uvicorn
 psycopg2
+pydantic
