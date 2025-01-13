@@ -29,7 +29,7 @@ dnspython==2.7.0
 ecdsa==0.19.0
     # via python-jose
 email-validator==2.2.0
-    # via pydantic
+    # via -r requirements.in
 exceptiongroup==1.2.2
     # via
     #   anyio
@@ -73,7 +73,7 @@ pyasn1==0.6.1
     #   rsa
 pycparser==2.22
     # via cffi
-pydantic[email]==2.10.0
+pydantic==2.10.0
     # via
     #   -r requirements.in
     #   fastapi
