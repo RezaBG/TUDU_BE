@@ -12,5 +12,6 @@ alembic>=1.8.0
 gunicorn
 python-multipart
 uvicorn
-psycopg2
+psycopg2 
 pydantic
+email-validator
