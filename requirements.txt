@@ -22,6 +22,8 @@ certifi==2024.8.30
     #   httpx
 cffi==1.17.1
     # via bcrypt
+click==8.1.8
+    # via uvicorn
 ecdsa==0.19.0
     # via python-jose
 exceptiongroup==1.2.2
@@ -33,7 +35,9 @@ fastapi==0.115.5
 gunicorn==23.0.0
     # via -r requirements.in
 h11==0.14.0
-    # via httpcore
+    # via
+    #   httpcore
+    #   uvicorn
 httpcore==1.0.7
     # via httpx
 httpx==0.27.2
@@ -105,3 +109,6 @@ typing-extensions==4.12.2
     #   pydantic-core
     #   sqlalchemy
     #   starlette
+    #   uvicorn
+uvicorn==0.34.0
+    # via -r requirements.in

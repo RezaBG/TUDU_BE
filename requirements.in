@@ -11,3 +11,4 @@ python-jose
 alembic>=1.8.0
 gunicorn
 python-multipart
+uvicorn
