@@ -12,6 +12,5 @@ alembic>=1.8.0
 gunicorn
 python-multipart
 uvicorn
-pydantic==2.10
-pydantic-core
+pydantic
 pydantic[email]
