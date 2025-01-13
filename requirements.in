@@ -14,4 +14,4 @@ python-multipart
 uvicorn
 psycopg2 
 pydantic
-pydantic[email]
+pydantic[email-validator]
