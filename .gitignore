@@ -133,3 +133,5 @@ test.db
 # Other
 guidline-postgres.txt
 text.md
+
+.env
