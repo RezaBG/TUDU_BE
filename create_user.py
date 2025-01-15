@@ -8,8 +8,8 @@ def create_admin_user():
     print(f"Database session created: {db}")
 
     # Check if the user already exists
-    username = "admin1"
-    email = "admin1@example.com"
+    username = "admin"
+    email = "admin@example.com"
     existing_user = db.query(User).filter(or_(User.email == email, User.username == username)).first()
     if existing_user:
         print(f"A user with the email '{email}' or username 'admin' already exists.")

@@ -10,10 +10,10 @@ TUDU is a task management application built using FastAPI and SQLAlchemy. It pro
 
 ### Step 1: Clone the Repository
 
-```bash
+````bash
 git clone https://github.com/your-username/TUDU.git
 cd TUDU
-```
+```plaintext
 
 ### Step 2: Set Up the Virtual Environment
 
@@ -40,26 +40,27 @@ pip install -r requirements.txt
 
 Set up the database URLs for both development and testing environments:
 
-- Development (PostgreSQL):
-  ```bash
-  export DATABASE_URL="postgresql+psycopg2://dev:dev@localhost/tudu"
-  ```
+Create a .env file in the root directory and add the following lines:
 
-- Testing (SQLite):
-  ```bash
-  export TEST_DATABASE_URL="sqlite:///./test.db"
-  ```
+```bash
+DATABASE_URL="postgresql+psycopg2://username:password@render-host/tudu_database"
+TEST_DATABASE_URL="sqlite:///./test.db"
+```
+
+> Note: Ensure .env is included in .gitignore to prevent sensitive information from being committed.
 
 ### Step 5: Run Database Migrations
 
 To initialize the database schema and apply migrations:
 
 1. Install Alembic (if not already installed):
+
    ```bash
    pip install alembic
    ```
 
 2. Apply migrations:
+
    ```bash
    alembic upgrade head
    ```
@@ -74,8 +75,14 @@ uvicorn src.main:app --reload
 
 Access the application at:
 
-```
+```plaintext
 http://127.0.0.1:8000
+```
+
+To run the application in production:
+
+```bash
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main:app
 ```
 
 ### Step 7: Run Tests
@@ -102,12 +109,19 @@ alembic upgrade head
 ### Dependency Management
 
 This project uses `requirements.in` and `requirements.txt` for dependency management:
+
 - Add high-level dependencies to `requirements.in`.
 - Use `pip-compile requirements.in` to generate `requirements.txt`.
 
+### Debugging Database Connectivity
+
+- Ensure the `DATABASE_URL` is set correctly in .env
+- Verify network permissions for accessing the database (e.g., allowlisted IPs).
+- Check Render's database dashboard for connection details.
+
 ### Debugging SQLite Issues
 
-For testing, SQLite is used as the database. If tables are not persisting as expected, check the teardown logic in `tests/conftest.py` to ensure tables are not being dropped after tests.
+For testing, SQLite is used as the database. If tables are not persisting as expected, check the teardown logic in tests/conftest.py to ensure tables are not being dropped after tests.
 
 ---
 
@@ -117,9 +131,11 @@ We welcome contributions! To contribute:
 
 1. Fork the repository.
 2. Create a feature branch:
+
    ```bash
    git branch feature/your-feature-name
    ```
+
 3. Make your changes and run tests.
 4. Submit a pull request with a clear description of your changes.
 
